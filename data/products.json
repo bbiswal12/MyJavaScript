@@ -1,0 +1,18 @@
+[
+    {
+        "Name":"Samsung Tv",
+        "Price":45000,
+        "Rating":{"Rate":4.2 , "Count":5500}
+    },
+    {
+         "Name":"Watch",
+         "Price":5000,
+         "Rating":{"Rate":4.5,"Count":7800}
+    },
+    {
+        "Name":"FootWear",
+        "Price":8000,
+        "Rating":{"Rate":4.3,"Count":8000}
+    }
+
+]

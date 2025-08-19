@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script type="text/javascript" src="../src/scripts/BMI.js">
+
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <h1>BMI Calculator</h1>
+    <div class="progress mt-3">
+        <div class="progress-bar bg-dark me-1" style="width:400px">
+             Under Weight below 53Kg
+        </div>
+        <div class="progress-bar bg-success me-1" style="width:400px">
+            Normal Weight 54kg to 70kg
+        </div>
+        <div class="progress-bar bg-warning me-1" style="width:400px">
+            Over Weight 70kg to 86kg
+        </div>
+        <div class="progress-bar bg-danger me-1" style="width:400px">
+            Obese above 86kg
+        </div>
+
+    </div>
+    <div>
+        <div id="yourStatus">
+           <span class="bi bi-caret-down-fill"></span>
+           <div>You</div>
+        </div>
+    </div>
+    
+</body>
+</html>

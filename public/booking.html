@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body class="container-fluid d-flex justify-content-center mt-1" style="height:450px; position:fixed;background-color:white;">
+    <div class="card p-4 shadow custom-border-radius" style="width:100%; max-width: 400px; background-color:yellow;">
+        <form>
+           <h5>From</h5>
+           <input type="text" size="20" id="starting" class="form-control">
+           <hr>
+           <h5>To</h5>
+           <input type="text" id="destination" class="form-control">
+           <hr>
+           <h5>Date</h5>
+           <input type="date" id="date-select">
+           <hr>
+           <h5>Select Coach</h5>
+           <select>
+             <optgroup>
+                <option class="checked">All Classes</option>
+                <option> AC First Class</option>
+                <option>Vistadome AC</option>
+                <option>AC 2 Tier(2A)</option>
+                <option> AC 3 Economy</option>
+                <option> Sleeper</option>
+                <option>General</option>
+             </optgroup>
+           </select>
+           <button class="btn btn-primary w-100 m-3 align-items-center" style="background-color: orangered;" >Search</button>
+
+        </form>
+    </div>
+</body>
+</html>

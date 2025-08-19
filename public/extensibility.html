@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class HDFC_BANK_VERSION1
+        {
+             personal="Personal Banking Services";
+             NRI="NRI Banking Service";
+             print(){
+                document.write(`${this.personal}<br>${this.NRI}<br>`);
+             }
+
+        }
+        class HDFC_BANK_VERSION2 extends HDFC_BANK_VERSION1
+        {
+             Loans="Car and Personal Loans";
+             print(){
+                // let obj=new HDFC_BANK_VERSION1();
+                // obj.print();
+                super.print();
+                document.write(`${this.Loans}`);
+             }
+        }
+        function InstallClick(){
+            var ver=document.getElementById("optchoose").value;
+            switch(ver){
+                case "ver1":
+                  document.write("<h2>HDFC_VERSION-1<h2>")
+                  let obj1=new HDFC_BANK_VERSION1();
+                  obj1.print();
+                  break;
+                case "ver2":
+                  document.write("<h2>HDFC_VERSION-2<h2>")  
+                  let obj2=new HDFC_BANK_VERSION2();
+                  obj2.print();
+                  break;
+                default:
+                document.write(`Please select a version`)  ;    
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <h2>Install Bank App</h2>
+    <select id="optchoose">
+        <option>Choose version</option>
+        <option value="ver1">version1</option>
+        <option value="ver2">version2</option>
+    </select>
+    <button onclick="InstallClick()">Install</button>
+</body>
+</html>

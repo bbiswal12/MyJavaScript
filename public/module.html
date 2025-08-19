@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        //  import {PrintName} from   "../library/module/home.module.js";
+        import * as home from "../library/module/home.module.js";
+         import {GetProducts} from "../library/module/products.module.js";
+         document.querySelector("p").innerHTML=home.Addition(10,15);
+         GetProducts().map(function(product){
+            var li=document.createElement("li"); 
+            li.innerHTML=product.Name;
+            document.querySelector("ol").appendChild(li);
+         })
+
+
+    </script>
+</head>
+<body>
+    <p></p>
+    <ol></ol>
+</body>
+</html>

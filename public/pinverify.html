@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      var userDetails={
+        userName:"john",
+        pin:6218
+
+      }
+      function SubmitClick(){
+        var pin=parseInt(document.getElementById("pin").value);
+        if(pin==userDetails.pin){
+            document.write("Pin verified Successfully!");
+        }else{
+            document.getElementById("error").innerHTML="Invalid Pin".fontcolor('red');
+        }
+      }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Pin Verify</legend>
+        <div>
+            Your Pin : <input type="text" id="pin"> <button onclick="SubmitClick()">Submit</button>
+        </div>
+        <p align="center" id="error"></p>
+    </fieldset>
+</body>
+</html>

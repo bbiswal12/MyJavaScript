@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function getTime(){
+            var now=new Date();
+            document.getElementById("time").innerHTML=now.toLocaleTimeString();
+        }
+        function bodyload(){
+            var msg=document.getElementById("msg");
+            var now=new Date();
+            if(now.getHours()>=0 && now.getHours()<=12){
+                msg.innerHTML="Good Morning";
+            }else if(now.getHours()>12 && now.getHours()<=17){
+                 msg.innerHTML="Good Evening";
+            }else{
+                 msg.innerHTML="Good Night";
+            }
+            document.getElementById("cal").innerHTML=now.toLocaleDateString();
+            document.getElementById("time").innerHTML=now.toLocaleTimeString();
+            setInterval(getTime,1000);
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <div class="btn-toolbar bg-danger justify-content-between">
+        <div class="btn-group">
+           <button class="btn btn-danger">Home</button>
+           <button class="btn btn-danger">About</button>
+           <button class="btn btn-danger">Contact</button>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-danger">
+                <span id="msg"></span>
+            </button>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-danger">
+                <span class="bi bi-calendar" id="cal"></span>
+            </button>
+            <button class="btn btn-danger">
+                <span class="bi bi-clock" id="time"></span>
+            </button>
+
+        </div>
+        
+
+    </div>
+    
+</body>
+</html>

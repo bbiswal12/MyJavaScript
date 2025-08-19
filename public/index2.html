@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function ClickLogin(){
+            var userName=document.getElementById("User-Name").value;
+            var irctcCode=document.getElementById("Irctc-Code").value;
+            if(userName!="" && irctcCode!=""){
+               window.location.href="document.html" 
+            }else{
+                alert("fillup the document");
+            }
+
+        }
+    </script>
+</head>
+<body class=" container-fluid d-flex justify-content-center align-items-center vh-100 bg-black">
+   <div class="card p-4 shadow custom-border-radius" style="width: 100%; max-width: 400px;">
+
+          <h2>IRCTC LOGIN</h2>
+        <form>
+           <dl>
+              <dt>User Name</dt>
+              <dd><input type="text" id="User-Name" class="form-control" ></dd>
+              <dt>IRCTC CODE</dt>
+              <dd><input type="password" id="Irctc-Code" class="form-control"></dd>
+            </dl>
+            <button type="button" class="btn btn-primary w-100" onclick="ClickLogin()">Login</button>
+        </form>
+    </div>
+</body>
+</html>

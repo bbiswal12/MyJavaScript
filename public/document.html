@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function SubmitForm(){
+            var fullName=document.getElementById("Full-Name").value;
+            var age=document.getElementById("Age").value;
+            var city=document.getElementById("City").value;
+            var gender=document.getElementById("Gender").value;
+            
+            if(fullName!="" && age!="" && city!="" && gender!=""){
+                window.location.href="booking.html";
+            }else{
+                alert("Please fillup the form!!")
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid d-flex justify-content-center align-items-center vh-100 bg-black">
+    <div class="card p-4 m-5 shadow custom-border-radius" style="width: 100%; max-width: 400px;">
+        <h2>Verification Process</h2>
+    <form>
+     <dl>
+        <dt>Full Name</dt>
+        <dd><input type="text" id="Full-Name" class="form-control"></dd>
+        <dt>Age</dt>
+        <dd><input type="number" id="Age" size="4" min="18" max="30" step="1" class="form-control"></dd>
+        <dt>Location</dt>
+        <dd>
+            <select class="form-control" id="City">
+                <option>Choose City</option>
+                <option>Pune</option>
+                <option>Delhi</option>
+                <option>Odisha</option>
+                <option>Kolkata</option>
+            </select>
+        </dd>
+        <dt>Gender</dt>
+            <input type="radio" name="Male" id="Gender" value="Male">Male
+            <input type="radio"id="Gender" name="Female" value="Female">Female
+        <dt class="t-4">Contact Number</dt>
+        <dd><input type="text" size="10" id="Ph-No" class="form-control"></dd>
+     </dl>
+     <button type="button" class="btn btn-primary w-100" onclick="SubmitForm()">Submit</button>
+    </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function GetTime(){
+            var now=new Date();
+            // document.querySelector("p").innerHTML=now.toLocaleTimeString();
+            return now.toLocaleTimeString();
+        }
+        function bodyload(){
+            document.querySelector("p").innerHTML=GetTime();
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <p></p>
+</body>
+</html> -->
+
+
+
+<!-- <script>
+    function PrintNumbers(n){
+       document.write(n+"<br>");
+       n++;
+       if(n>10){
+        return;
+       }
+       PrintNumbers(n);
+    }
+    PrintNumbers(1);
+</script> -->
+
+
+
+<!-- <script>
+    var addition=(a,b) => a+b;
+    document.write(addition(25,35));
+</script> -->
+
+
+
+<!-- <script>
+   function outer()
+   {
+       var x=10;
+       function inner(){
+        var y=20;
+        return `x=${x} y=20`;
+       }
+
+       var result=inner();
+       document.write(result);
+
+   }
+   outer();
+    
+</script> -->
+
+
+
+<script>
+    function* Demo(){
+        yield function(){return "statement-1"};
+         yield function(){return "statement-2"};
+          yield function(){return "statement-3"};
+
+    }
+        const obj=Demo();
+
+
+    document.write(obj.next().value()+"<br>");
+    document.write(obj.next().value()+"<br>");
+    document.write(obj.next().value()+"<br>");
+</script>

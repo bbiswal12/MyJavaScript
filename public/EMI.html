@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI CALCULATOR</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .box{
+            background-color: white;
+            box-shadow:6px 6px 3px grey;
+            padding:30px;
+        }
+    </style>
+    <script type="text/javascript" src="../src/scripts/emi.js">
+
+    </script>
+</head>
+<body class="container-fluid">
+    <h1>Personal Loan Emi calculator</h1>
+   
+     <div class="box">
+        <div class="row">
+          <div class="col">
+           Amount you need &#8377;<input type="text" onchange="AmountTextBoxChanged()" id="txtAmount" size="10">
+          </div>
+          <div class="col">
+           for <input type="text" onchange="YearsTextBoxChanged()" id="txtYears" size="2"> years
+          </div>
+          <div class="col">
+           interest rate <input type="text" onchange="RateTextBoxChanged()" id="txtRate" size="4">%
+          </div>
+
+        </div>
+   
+   <div class="row mt-4">
+      <div class="col">
+        <div class="d-flex">
+           <span>&#8377;50,000</span>
+           <input type="range" id="rangeAmount" onchange="AmountChange()" min="50000" max="1000000" value="50000" style="width:150px">
+           <span>&#8377;1000000</span>
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="d-flex">
+           <span>1</span>
+           <input type="range" id="rangeYears" onchange="YearsChange()" min=1 max=5 value=1 style="width:150px">
+           <span>5</span>
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="d-flex">
+           <span>10.25%</span>
+           <input type="range" id="rangeRate" onchange="RateChange()" min=10.25 max=18.25 value=10.25 step="0.1" style="width:150px">
+           <span>18.25%</span>
+        </div>
+
+      </div>
+
+   </div>
+    <div class="row mt-4">
+      <div class="col text-center" >
+        <button class="btn btn-primary" onclick="CalculateClick()">Calculate</button>
+
+      </div>
+
+    </div>
+
+    </div>
+    <p class="mt-3 text-center" id="result"></p>
+
+</body>
+</html>

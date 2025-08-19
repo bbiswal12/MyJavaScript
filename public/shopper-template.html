@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopper</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script type="text/javascript">
+        function LoadCategories(){
+            fetch("https://fakestoreapi.com/products/categories")
+            .then(function(response){
+               return response.json();
+            })
+            .then(function(categories){
+                categories.unshift("all");
+                for(var category of categories){
+                    var option=document.createElement("option");
+                    option.text=category.toUpperCase();
+                    option.value=category;
+                    document.getElementById("lstCategories").appendChild(option);
+                }
+            })
+        }
+        function LoadProducts(url){
+            fetch(url)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(products){
+                for(var product of products){
+                    var card=document.createElement("div");
+                    card.className=" card p-2 m-2";
+                    card.style.width="200px";
+                    card.innerHTML=`
+                       <img src=${product.image}  class="card-img-top" height="100">
+                       <div class="card-header">
+                            <p>${product.title}</p>
+                        </div>
+                        <div class="card-body">
+                           <dl>
+                               <dt>Price</dt>
+                               <dd>${product.price}</dd>
+                               <dt>Rating</dt>
+                               <dd>
+                                   <span class="bi bi-star-fill text-success"></span>
+                                   ${product.rating.rate}[${product.rating.count}]
+                                </dd>
+                            </dl>
+                        </div> 
+                        <div class="card-footer">
+                               <button class="btn btn-danger w-100">
+                                  <span class="bi bi-cart4"></span> Add to cart
+                                </button>
+                            
+                        </div>   
+                    `;
+                    document.querySelector("main").appendChild(card);
+                }
+            })
+        }
+        function bodyload(){
+            LoadCategories();
+            LoadProducts("https://fakestoreapi.com/products");
+        }
+        function CategoryChanged(){
+            var categoryName = document.getElementById("lstCategories").value;
+            document.querySelector("main").innerHTML = ""; // Clear previous cards
+
+            if(categoryName == "all"){
+                LoadProducts("https://fakestoreapi.com/products");
+            } else {
+                LoadProducts(`https://fakestoreapi.com/products/category/${categoryName}`);
+        }
+    }
+    function NavClick(categoryName){
+        document.getElementById("lstCategories").value=categoryName;   
+        document.querySelector("main").innerHTML = ""; // Clear previous cards
+
+            if(categoryName == "all"){
+                LoadProducts("https://fakestoreapi.com/products");
+            } else {
+                LoadProducts(`https://fakestoreapi.com/products/category/${categoryName}`);
+        }
+
+    }
+
+    </script>
+    <style>
+        a{
+            color:white;
+            text-decoration: none;
+        }
+        a:hover{
+            color:yellow;
+        }
+    </style>
+</head>
+<body class="container-fluid" onload="bodyload()">
+
+    <header class="d-flex justify-content-between p-2 bg-dark text-white mt-2">
+        <div>
+            <span style="font-size:25px;  font-weight:bold;">Shopper.</span>
+        </div> 
+        <div style="font-size:20px;">
+           <span class="me-3"><a href="javascript:NavClick('all')">Home</a></span>
+           <span class="me-3"><a href="javascript:NavClick('electronics')">Electronics</a></span>
+           <span class="me-3"><a href="javascript:NavClick('jewelery')">Jewellery</a></span>
+           <span class="me-3"><a href="javascript:NavClick('men\'s clothing')">Men's Fashion</a></span> 
+           <span class="me-3"><a href="javascript:NavClick('women\'s clothing')">Women's Fashion</a></span>
+        </div>
+        <div>
+            <span class="bi bi-search me-3"></span>
+            <span class="bi bi-person  me-3"></span>
+            <span class="bi bi-heart  me-3"></span>
+            <button class="btn btn-light position-relative">
+                <span class="bi bi-cart"></span>
+                <span class=" badge bg-danger position-absolute rounded rounded-circle">0</span>
+            </button>
+        </div>
+    </header>
+    <section class="mt-3 row">
+        <nav class="col-2">
+            <div>
+                 <label class="form-label fw-bold">Select Category</label>
+                <div>
+                  <select class="form-select" id="lstCategories" onchange="CategoryChanged()">
+
+                  </select>
+                </div>
+            </div>
+
+        </nav>
+        <main class="col-10 d-flex flex-wrap overflow-auto" style="height:500px">
+
+        </main>
+    </section>
+         
+
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

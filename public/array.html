@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        var cities=["Hyb","Mumbai","delhi"];
+        function LoadCities(){
+            document.getElementById("lstCities").innerHTML="";
+            
+            for(var city of cities){
+                var option=document.createElement("option");
+                option.text=city;
+                option.value=city;
+                document.getElementById("lstCities").appendChild(option);
+            }
+            document.getElementById("lblCount").innerHTML=`Total no of cities:${cities.length}`;
+           
+        }
+         function bodyload(){
+                LoadCities();
+               
+            }
+            function AddClick(){
+                var cityName=document.getElementById("txtCity").value;
+                if(cities.indexOf(cityName)==-1){
+                    cities.push(cityName);
+                    alert(`${cityName} added to list`);
+                    document.getElementById("txtCity").innerHTML="";
+                    LoadCities();
+                }else{
+                    alert(`${cityName} already exists`);
+                }
+            }
+            function RemoveClick(){
+                var selectedCityName=document.getElementById("lstCities").value;
+                var selectedIndex=cities.indexOf(selectedCityName);
+                var flag=confirm(`Delete ${selectedCityName}\n Are you sure want to delete`);
+                if(flag==true){
+                    cities.splice(selectedIndex,1);
+                    LoadCities();
+                }
+
+                }
+                function ClearAll(){
+                    cities.length=0;
+                    LoadCities();
+                }
+            
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <h2>Array Manipulation</h2>
+    <div class="mt-3 mb-3 w-25">
+        <div class="input-group">
+            <span class="input-group-text">New city :</span>
+            <input type="text" id="txtCity" class="form-control">
+            <button class="btn btn-primary" onclick="AddClick()">Add</button>
+        </div>
+
+    </div>
+    <div class="w-25">
+        <label class="form-label">Your Cities</label>
+        <div>
+            <span class=""></span>
+        </div>
+        <div>
+
+        </div>
+        <div>
+            <select id="lstCities" class="form-select" size="3">
+
+            </select>
+            <label class="form-label" id="lblCount"></label>
+        </div>
+    </div>
+    <div class="mt-3">
+     <button class="btn btn-danger" onclick="RemoveClick()"><span class="bi bi-trash-fill"></span>Remove City</button>
+     <button class="btn btn-danger" onclick="ClearAll()">Clear All</button>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function VerifyUserId(){
+        var userid=document.getElementById("txtUserId").value;
+        var usererror=document.getElementById("error");
+        fetch("../data/users.json")
+        .then(function(res){
+            return res.json();
+        })
+        .then(function(users){
+            for(var user of users){
+                if(user.userId==userid){
+                    usererror.innerHTML="Already Taken !Try Another".fontcolor('red');
+                    break;
+                }else{
+                   usererror.innerHTML="userId Available".fontcolor('green');
+                }
+            }
+        })
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Register Verify</legend>
+        <dl>
+            <dt>User Id</dt>
+            <dd><input type="text" id="txtUserId" onKeyup="VerifyUserId()"></dd>
+            <dd id="error"></dd>
+        </dl>
+    </fieldset>
+</body>
+</html>

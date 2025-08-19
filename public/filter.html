@@ -1,0 +1,16 @@
+<script>
+    var products=[
+        {Name:"Tv",Category:"Electronics"},
+        {Name:"Nike",Category:"Footware"},
+        {Name:"Tshirt",Category:"Fashion"},
+        {Name:"Watch",Category:"Electronics"}
+    ]
+
+    var result=products.filter(function(product){
+        return product.Category=="Footware" || product.Category=="Fashion";
+    })
+
+    for(var item of result){
+        document.write(item.Name +"<br>");
+    }
+</script>

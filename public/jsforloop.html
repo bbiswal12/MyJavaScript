@@ -1,0 +1,59 @@
+<!-- <script>
+    var names=[];
+    for(var i=0;i<=9;i++){
+        var name=prompt(`Enter name [${i+1}]`);
+        names[i]=name;
+    }
+    document.write(names);
+</script> -->
+
+
+
+<!-- <script>
+    var x=parseInt(prompt("Enter a number:"));
+    switch(true)
+    {
+        case(x>=1 && x<=10):
+         document.write(`${x} is between 1 to 10`);
+         break;
+        case(x>10 && x<=20):
+         document.write(`${x} is between 11 to 20`);
+         break;
+        case(x>20 && x<=30):
+         document.write(`${x} is between 21 to 30`);
+         break;
+        default:
+            document.write("Number not Found");
+            break;   
+                  
+    }
+</script> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var topics=["Web Technologies","Html","Semantic","Element","Tag","List"];
+        function bodyload()
+        {
+            for(var i=0; i<topics.length;i++)
+            {
+               var h=document.createElement(`h${i+1}`);
+               h.innerHTML=topics[i];
+               document.getElementById("container").appendChild(h);
+            }
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div id="container">
+
+    </div>
+</body>
+</html>
