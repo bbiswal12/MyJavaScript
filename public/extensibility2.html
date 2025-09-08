@@ -1,0 +1,48 @@
+<script>
+    class HDFC_BANK_VERSION1
+    {
+        Personal= "Personal Banking Loans";
+        NRI= "NRI Banking Services";
+        
+        print(){
+            document.write(`${this.Personal} <br> ${this.NRI}`);
+        }
+    }
+    class HDFC_BANK_VERSION2 extends HDFC_BANK_VERSION1
+    {
+        Loans="Car and Personal loans";
+        
+        print(){
+            // let obj=new HDFC_BANK_VERSION1();
+            // obj.print();
+            super.print();
+            document.write(`${this.Loans}`);
+            
+        }
+    }
+    function installClick(){
+        var ver=document.querySelector("select").value;
+        switch(ver)
+        {
+            case "ver1":
+                let obj1=new HDFC_BANK_VERSION1();
+                obj1.print();
+                break;
+            case "ver2":
+                let obj2=new HDFC_BANK_VERSION2();
+                obj2.print();
+                break;
+            default :
+                document.write("Please select a version!!");        
+        }
+    }
+</script>
+<body>
+    <h2>HDFC Bank Details</h2>
+    <select>
+        <option>Choose version</option>
+        <option value="ver1">varsion-1</option>
+        <option value="ver2">varsion-2</option>
+    </select>
+    <button onclick="installClick()">Install</button>
+</body>

@@ -1,0 +1,30 @@
+<!-- <script>
+    function FetchData(url,success,failure)
+    {
+        if(url=="http://fakestoreapi.com/products"){
+            success('Fetched Data Successfully');
+        }else{
+            failure('Unable to Fetch the Data');
+        }
+    }  
+    FetchData(prompt("Enter url :"),
+    (msg)=>{document.write(`Success:${msg}`)},
+    (msg)=>{document.write(`Failure:${msg}`)}
+    )
+</script> -->
+
+<script>
+    function FetchData(url,success,failure)
+    {
+        if(url=="http://fakestoreapi.com/products"){
+            success('Data Fetched successfully');
+        }else{
+            failure('Unable to fetch Data');
+        }
+    }
+    FetchData(prompt('Enter url :'),
+         (msg)=>{document.write(`success:${msg}`)},
+         (msg)=>{document.write(`Failure:${msg}`)}
+    
+    )
+</script>

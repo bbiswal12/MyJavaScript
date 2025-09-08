@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Copy(){
+            document.getElementById("msg").innerHTML="Copied from clipboard";
+        }
+         function Cut(){
+            document.getElementById("msg").innerHTML="Cut from clipboard";
+        }
+         function Paste(){
+            document.getElementById("msg").innerHTML="Paste in clipboard";
+        }
+
+        document.oncut=function(){
+            alert('Cut not allowed');
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <textarea rows="4" cols="40" oncopy="Copy()" oncut="Cut()" onpaste="Paste()">Welcome to javascript World</textarea>
+    <p id="msg"></p>
+</body>
+</html>

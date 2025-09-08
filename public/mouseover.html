@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ShowDetails(){
+          document.querySelector("p").innerHTML=`
+          
+             <b>Special Offer</b><i>50% Off</i> on Nike Casuals.
+          ` 
+        }
+        function HideDetails(){
+           document.querySelector("p").innerHTML=``
+        }
+    </script>
+</head>
+<body>
+    <img onmouseover="ShowDetails()" onmouseout="HideDetails()" src="image/realme.png" width="200px" height="200px">
+    <p></p>
+</body>
+</html>

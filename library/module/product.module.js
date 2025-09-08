@@ -10,3 +10,6 @@ export class Product
         return `Name=${this.Name}<br>Price=${this.Price}<br>Qty=${this.Qty}<br>Total=${this.Total()}`;
      }
 } 
+
+
+

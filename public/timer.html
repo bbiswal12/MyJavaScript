@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function msg1(){
+            document.querySelector("h2").innerHTML="Hello!";
+        }
+         function msg2(){
+            document.querySelector("h2").innerHTML="How are You?";
+        }
+         function msg3(){
+            document.querySelector("h2").innerHTML="Welcome to javascript";
+        }
+        function bodyload(){
+           setTimeout(msg1,3000);
+           setTimeout(msg2,5000);
+           setTimeout(msg3,10000);
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2 align="center"></h2>
+</body>
+</html>

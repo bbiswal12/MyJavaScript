@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       var http=new XMLHttpRequest();
+       function xmlClick(){
+        http.open("get","../data/product.xml",true);
+        http.send();
+        http.onreadystatechange=function(){
+            let xmldoc=http.responseXML;
+            let root=xmldoc.querySelector("root");
+            document.getElementById("container").innerHTML=root.firstChild.data;
+        }
+       }
+    </script>
+</head>
+<body>
+    <button onclick="xmlClick()">XML Data</button>
+    <hr size="3" noshade color="red">
+    <div id="container">
+
+    </div>
+</body>
+</html>

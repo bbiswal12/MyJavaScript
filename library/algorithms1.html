@@ -1,0 +1,17 @@
+<script>
+    function PrintNumbers(number){
+    var result=0;
+    for(var i=1;i<=number;i++){
+        result=result+i;
+    }
+   return result;  
+}
+
+let StartProfilling=0;
+let EndProfilling=0;
+StartProfilling=performance.now();
+document.write(PrintNumbers(10000)+"<br>");
+EndProfilling=performance.now();
+let TotalTimeTaken=EndProfilling-StartProfilling;
+document.write(`TotalTime :${TotalTimeTaken}`)
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function bodyload(){
+        var label=document.createElement("label");
+        var input=document.createElement("input");
+        var button=document.createElement("button");
+
+        label.innerHTML="Your Password :";
+        input.type="password";
+        input.id="txtPassword";
+
+        button.innerHTML="Login";
+
+        var container=document.querySelector(".container");
+        container.appendChild(label);
+        container.appendChild(input);
+        container.appendChild(button);
+
+        button.addEventListener("click",function(){
+            if(input.value=="admin@123"){
+                document.write("Login Successfull!!");
+            }else{
+                document.write("Invalid Password!!!");
+            }
+        })
+
+       }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div class="container">
+
+    </div>
+</body>
+</html>

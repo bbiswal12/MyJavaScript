@@ -193,7 +193,7 @@
 
 
 
-<script>
+<!-- <script>
     var Product ={
         "Name":"Samsung Tv",
         "Price":0,
@@ -210,4 +210,77 @@
     Product.Price=parseInt(prompt("Enter Price :"));
    
     Product.Print();
-</script>
+</script> -->
+
+
+
+<!-- <script>
+    class Product
+    {
+       print(...args)
+       {
+        for(var value of args)
+        {
+            document.write(`${value} <br>`);
+        }
+       }
+    }
+    let obj=new Product();
+    obj.print(1,'samsung tv',4.03,true);
+</script> -->
+
+
+
+<!-- <script>
+    class Product{
+        constructor(name){
+            document.write(`Hello ! ${name}`);
+        }
+    }
+    let obj=new Product("john");
+
+</script> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Database
+        {
+            constructor(){
+                document.write(`Connected to Database!! <br>`);
+            }
+             insert(){
+                document.write("Data Successfully Inserted!!");
+             }
+              delete(){
+                document.write("Data Successfully Deleted!!");
+              }
+            
+        }
+        function insertClick(){
+            var obj=new Database();
+            obj.insert();
+        }
+        function deleteClick(){
+             var obj2=new Database();
+             obj2.delete();
+        }
+    </script>
+</head>
+<body>
+      <button onclick="insertClick()">Insert</button>
+      <button onclick="deleteClick()">Delete</button>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+<script>
+    var getProducts=new Promise((resolve)=>{
+        resolve('Gets All products');
+    })
+    var getCatagories=new Promise((resolve)=>{
+        resolve('Gets All catagories');
+    })
+    var getCart=new Promise((resolve)=>{
+        resolve('Gets All Cart Items');
+    })
+    Promise.all([
+        getProducts,
+        getCatagories,
+        getCart
+ ]).then(result=>{
+    for(var item of result){
+     document.write(item);
+    }
+ })
+</script>
